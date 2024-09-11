@@ -1,8 +1,14 @@
 import React from 'react'
+import HomeTopSelectors from '../components/HomeTopSelectors'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <>
+      <div>
+        <HomeTopSelectors />
+      </div>
+      <div>Home</div>
+    </>
   )
 }
 
