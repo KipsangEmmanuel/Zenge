@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Airpods from "../assest/assest/products/airpodes/podA.webp"
 import Mouse from "../assest/assest/products/mouse/mouse1.webp"
 import Camera from "../assest/assest/products/camera/camera1.jpg"
@@ -29,6 +29,15 @@ const categories = [
 ];
 
 const HomeTopSelectors = () => {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
+  const handleMouseLeave = () => {
+    setHoveredIndex(null)
+  }
+
+  const handleMouseEnter = (index) => {
+    setHoveredIndex(index);
+  };
   return (
     <div style={{marginTop: '10px', paddingTop: '10px', display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '10px' }}>
       {categories.map((category, index) => (
@@ -45,15 +54,19 @@ const HomeTopSelectors = () => {
                 backgroundColor: '#fofofo'
             }}
           >
-            <img src={category.image} alt={category.name} style={
+            <img className='zoom-image' src={category.image} alt={category.name} style={
                 { 
                     width: '60px',
                     height: '60px',
                     borderRadius: '50%',
                     objectFit: 'contain',
-                    backgroundColor: 'white'
+                    backgroundColor: 'white',
+                    transform: hoveredIndex === index ? 'scale(1.1)' : 'scale(1)',
+                    transition: 'transform 0.3s ease-in-out'
                 }
                 } 
+                onMouseEnter={() => handleMouseEnter(index)}
+                onMouseLeave={handleMouseLeave}
             />
           </div>
           <p>{category.name}</p>
