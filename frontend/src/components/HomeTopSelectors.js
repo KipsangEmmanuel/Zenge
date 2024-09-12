@@ -39,7 +39,7 @@ const HomeTopSelectors = () => {
     setHoveredIndex(index);
   };
   return (
-    <div style={{marginTop: '10px', paddingTop: '10px', display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '10px' }}>
+    <div style={{marginTop: '10px', paddingTop: '10px', display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '27px' }}>
       {categories.map((category, index) => (
         <div key={index} style={{ textAlign: 'center' }}>
           <div
@@ -51,7 +51,9 @@ const HomeTopSelectors = () => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                backgroundColor: '#fofofo'
+                backgroundColor: '#e2e8f0',
+                cursor: 'pointer'
+                
             }}
           >
             <img className='zoom-image' src={category.image} alt={category.name} style={
@@ -60,7 +62,7 @@ const HomeTopSelectors = () => {
                     height: '60px',
                     borderRadius: '50%',
                     objectFit: 'contain',
-                    backgroundColor: 'white',
+                    backgroundColor: '#e2e8f0',
                     transform: hoveredIndex === index ? 'scale(1.1)' : 'scale(1)',
                     transition: 'transform 0.3s ease-in-out'
                 }

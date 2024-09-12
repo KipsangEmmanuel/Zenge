@@ -1,5 +1,6 @@
 import React from 'react'
 import HomeTopSelectors from '../components/HomeTopSelectors'
+import HomeCarousel from '../components/HomeCarousel'
 
 const Home = () => {
   return (
@@ -7,7 +8,9 @@ const Home = () => {
       <div>
         <HomeTopSelectors />
       </div>
-      <div>Home</div>
+      <div>
+        <HomeCarousel />
+      </div>
     </>
   )
 }
