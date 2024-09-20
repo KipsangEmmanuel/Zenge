@@ -1,7 +1,12 @@
 import sql from 'mssql';
 import dotenv from 'dotenv';
+import {join, dirname} from 'path';
 
-dotenv.config();
+dotenv.config(
+  {
+    path: join('..','..','.env')
+  }
+);
 
 const {SQL_USER, SQL_PASSWORD, SQL_SERVER, SQL_DB, SQL_SERVER_PORT, SQL_ENCRYPT, SQL_TRUST_SERVER_CERTIFICATE} = process.env;
 
